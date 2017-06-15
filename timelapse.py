@@ -114,25 +114,22 @@ def main(cam_id, cam_param_vals, period, port, signal, prefix):
 
 
 if __name__ == '__main__':
-    cam_id = 0
+    cam_id = 0 # Usually 0 if there is only one USB camera connected
+    cycle_period = 30 # seconds
+    serial_port = 'COM3' # The serial port for Arduino UNO
+    serial_signal = 1 # Should be an integer 0 ~ 127 (ASCII)
+    filename_prefix = 'TimeLapsed'
 
-    param_vals = {'width'        : 1920 ,
-                  'height'       : 1080 ,
-                  'brightness'   : 70   ,
+    param_vals = {'width'        : 1280 ,
+                  'height'       : 720  ,
+                  'brightness'   : 150  ,
                   'contrast'     : 100  ,
                   'saturation'   : 120  ,
                   'hue'          : 13   ,
-                  'gain'         : 20   ,
-                  'exposure'     : -4   ,
+                  'gain'         : 100  ,
+                  'exposure'     : -3   ,
                   'white_balance': 5000 ,
                   'focus'        : 0    }
-
-    cycle_period = 5 # seconds
-
-    serial_port = 'COM3'
-    serial_signal = 1 # Should be an integer 0 ~ 127
-
-    filename_prefix = 'TimeLapse'
 
     main(cam_id = cam_id,
          cam_param_vals = param_vals,
