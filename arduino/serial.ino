@@ -6,6 +6,7 @@ int t_on = 100;
 int t_off = 900;
 int led = 255;
 
+
 void setup() {
   Serial.begin(9600);
   pinMode(8, OUTPUT); // Connect pin 8 to CLK+ to send pulse for each step
@@ -14,6 +15,7 @@ void setup() {
   pinMode(11,OUTPUT); // Laser
   pinMode(3,OUTPUT);  // LED
 }
+
 
 void loop() {
   power = (laser * 16) - 1;
@@ -54,4 +56,3 @@ void loop() {
     }
   }
 }
-
